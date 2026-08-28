@@ -247,6 +247,9 @@
   .avail{ font-size:12px; background:var(--ivory); border-radius:10px; padding:6px 10px; display:inline-block; }
   .avail b{ color:var(--spice); font-size:14px; }
   .note-line{ font-size:11px; color:var(--brown-soft); margin-top:8px; line-height:1.7; }
+  .tag-done{ display:inline-block; background:#B79A7C; color:#fff; font-size:10.5px; padding:3px 10px; border-radius:12px; }
+  .tag-open{ display:inline-block; background:var(--spice); color:#fff; font-size:10.5px; padding:3px 10px; border-radius:12px; }
+  .detail-list{ margin:0; padding-left:18px; font-size:11.5px; color:var(--brown-soft); line-height:1.9; }
 
   .rule-card{ max-width:460px; margin:0 auto 16px; background:var(--white); border-radius:18px; padding:18px 18px; box-shadow:0 4px 0 var(--ivory-deep); }
   .rule-card h4{ margin:0 0 10px; font-size:14px; display:flex; align-items:center; gap:6px; }
@@ -304,38 +307,32 @@
   <section id="schedule" class="events reveal">
     <h2 class="section-title">年間スケジュール</h2>
     <p class="section-sub">SCHEDULE</p>
-    <p class="sched-note" style="margin-bottom:18px;">月をタップすると、内容・会費・空き状況などの詳細が開きます。</p>
+    <p class="sched-note" style="margin-bottom:18px;">月をタップすると内容が開きます。「開催済み」は今年度実施済みの記録、「開催予定」はこれからの回です。</p>
 
     <div class="acc-wrap">
 
       <div class="month-acc">
         <button class="month-head">
           <span class="month-label hand">2月</span>
-          <span class="month-tags"><span class="tag-ws">WS</span><span class="tag-cls">教室</span></span>
+          <span class="month-tags"><span class="tag-done">開催済み</span></span>
           <span class="chevron">▾</span>
         </button>
         <div class="month-body">
           <div class="day-detail">
-            <div class="day-detail-head"><span class="tag-ws">WS</span><span class="day-label">2月◯◯日(火)</span></div>
-            <h5>編み物教室</h5>
+            <div class="day-detail-head"><span class="tag-cls">教室</span><span class="day-label">2月24日(火)</span></div>
+            <h5>料理教室：スパイスキーマカレー・米粉のガトーショコラ</h5>
             <ul class="detail-list">
-              <li>会費：¥ ,000<span class="tbd">(金額調整中)</span></li>
-              <li>時間：◯◯:◯◯〜◯◯:◯◯<span class="tbd">(調整中)</span></li>
-              <li>持ち物：◯◯◯◯<span class="tbd">(調整中)</span></li>
+              <li>会費：¥2,000</li>
+              <li>時間：10:00〜14:00</li>
             </ul>
-            <div class="avail">定員5名 / 残り <b>3</b> 名</div>
-            <div class="note-line">備考：オーナー主催のため、お弁当の出前を手配します</div>
           </div>
           <div class="day-detail">
-            <div class="day-detail-head"><span class="tag-cls">教室</span><span class="day-label">2月◯◯日(水)</span></div>
-            <h5>煮込みハンバーグとガトーショコラ</h5>
+            <div class="day-detail-head"><span class="tag-ws">WS</span><span class="day-label">2月25日(水)</span></div>
+            <h5>天然石で遊ぼう</h5>
             <ul class="detail-list">
-              <li>会費：¥ ,000<span class="tbd">(金額調整中)</span></li>
-              <li>時間：◯◯:◯◯〜◯◯:◯◯<span class="tbd">(調整中)</span></li>
+              <li>会費：¥4,500(食事付き)</li>
+              <li>時間：10:00〜15:00</li>
             </ul>
-            <div class="avail">定員5名 / 現在のお申込み <b>2</b> 名</div>
-            <p class="over-note">※定員を超えた場合は、選考ルールに基づき参加者を決定します</p>
-            <div class="note-line">備考：特になし</div>
           </div>
         </div>
       </div>
@@ -343,82 +340,163 @@
       <div class="month-acc">
         <button class="month-head">
           <span class="month-label hand">3月</span>
-          <span class="month-tags"><span class="tag-cls">教室</span><span class="tag-ws">WS</span></span>
+          <span class="month-tags"><span class="tag-done">開催済み</span></span>
           <span class="chevron">▾</span>
         </button>
         <div class="month-body">
-          <div class="day-detail"><p class="tbd-block">内容は決まり次第お知らせします。</p></div>
+          <div class="day-detail">
+            <div class="day-detail-head"><span class="tag-ws">WS</span><span class="day-label">3月31日(火)</span></div>
+            <h5>編み物教室</h5>
+            <ul class="detail-list">
+              <li>会費：¥3,000(食事付き)</li>
+              <li>時間：10:00〜15:00</li>
+            </ul>
+          </div>
+          <div class="day-detail">
+            <div class="day-detail-head"><span class="tag-cls">教室</span><span class="day-label">4月1日(水)</span></div>
+            <h5>料理教室：じゃがいものニョッキ・煮込みハンバーグ</h5>
+            <ul class="detail-list">
+              <li>会費：¥2,000</li>
+              <li>時間：10:00〜14:00</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="month-acc">
         <button class="month-head">
           <span class="month-label hand">4月</span>
-          <span class="month-tags"><span class="tag-ws">WS</span><span class="tag-cls">教室</span></span>
+          <span class="month-tags"><span class="tag-done">開催済み</span></span>
           <span class="chevron">▾</span>
         </button>
         <div class="month-body">
-          <div class="day-detail"><p class="tbd-block">内容は決まり次第お知らせします。</p></div>
+          <div class="day-detail">
+            <div class="day-detail-head"><span class="tag-cls">教室</span><span class="day-label">4月28日(火)</span></div>
+            <h5>料理教室：豆花・芋圓・クッキー</h5>
+            <ul class="detail-list">
+              <li>会費：¥2,000</li>
+              <li>時間：10:00〜14:00</li>
+            </ul>
+          </div>
+          <div class="day-detail">
+            <div class="day-detail-head"><span class="tag-ws">WS</span><span class="day-label">4月29日(水)</span></div>
+            <h5>サボテンの寄せ植え</h5>
+            <ul class="detail-list">
+              <li>会費：¥4,500(食事付き)</li>
+              <li>時間：10:00〜15:00</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="month-acc">
         <button class="month-head">
           <span class="month-label hand">5月</span>
-          <span class="month-tags"><span class="tag-cls">教室</span><span class="tag-ws">WS</span></span>
+          <span class="month-tags"><span class="tag-done">開催済み</span></span>
           <span class="chevron">▾</span>
         </button>
         <div class="month-body">
-          <div class="day-detail"><p class="tbd-block">内容は決まり次第お知らせします。</p></div>
+          <div class="day-detail">
+            <div class="day-detail-head"><span class="tag-ws">WS</span><span class="day-label">5月26日(火)</span></div>
+            <h5>サボテンの寄せ植え</h5>
+            <ul class="detail-list">
+              <li>会費：¥4,500(食事付き)</li>
+              <li>時間：10:00〜15:00</li>
+            </ul>
+          </div>
+          <div class="day-detail">
+            <div class="day-detail-head"><span class="tag-cls">教室</span><span class="day-label">5月27日(水)</span></div>
+            <h5>料理教室：チーズケーキ・じゃがいものニョッキ</h5>
+            <ul class="detail-list">
+              <li>会費：¥2,000</li>
+              <li>時間：10:00〜14:00</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="month-acc">
         <button class="month-head">
           <span class="month-label hand">6月</span>
-          <span class="month-tags"><span class="tag-ws">WS</span><span class="tag-cls">教室</span></span>
+          <span class="month-tags"><span class="tag-done">開催済み</span></span>
           <span class="chevron">▾</span>
         </button>
         <div class="month-body">
-          <div class="day-detail"><p class="tbd-block">内容は決まり次第お知らせします。</p></div>
-        </div>
-      </div>
-
-      <div class="month-acc">
-        <button class="month-head">
-          <span class="month-label hand">7月</span>
-          <span class="month-tags"><span class="tag-cls">教室</span><span class="tag-ws">WS</span></span>
-          <span class="chevron">▾</span>
-        </button>
-        <div class="month-body">
-          <div class="day-detail"><p class="tbd-block">内容は決まり次第お知らせします。</p></div>
+          <div class="day-detail">
+            <div class="day-detail-head"><span class="tag-cls">教室</span><span class="day-label">6月30日(火)</span></div>
+            <h5>料理教室：チキン南蛮・酸辣湯・チョコムース</h5>
+            <ul class="detail-list">
+              <li>会費：¥2,000</li>
+              <li>時間：10:00〜14:00</li>
+            </ul>
+          </div>
+          <div class="day-detail">
+            <div class="day-detail-head"><span class="tag-ws">WS</span><span class="day-label">7月1日(水)</span></div>
+            <h5>耳つぼジュエリー</h5>
+            <ul class="detail-list">
+              <li>会費：¥4,500(食事付き)</li>
+              <li>時間：10:00〜15:00</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="month-acc">
         <button class="month-head">
           <span class="month-label hand">8月</span>
-          <span class="month-tags"><span class="tag-ws">WS</span><span class="tag-cls">教室</span></span>
+          <span class="month-tags"><span class="tag-done">開催済み</span></span>
           <span class="chevron">▾</span>
         </button>
         <div class="month-body">
-          <div class="day-detail"><p class="tbd-block">内容は決まり次第お知らせします。</p></div>
+          <div class="day-detail">
+            <div class="day-detail-head"><span class="tag-cls">教室</span><span class="day-label">8月25日(火)</span></div>
+            <h5>料理教室：煮込みハンバーグ・カッサータ</h5>
+            <ul class="detail-list">
+              <li>会費：¥2,000</li>
+              <li>時間：10:00〜14:00</li>
+            </ul>
+          </div>
+          <div class="day-detail">
+            <div class="day-detail-head"><span class="tag-ws">WS</span><span class="day-label">8月26日(水)</span></div>
+            <h5>クラフト鍋敷き</h5>
+            <ul class="detail-list">
+              <li>会費：¥3,500(食事付き)</li>
+              <li>時間：10:00〜15:00</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="month-acc">
         <button class="month-head">
           <span class="month-label hand">9月</span>
-          <span class="month-tags"><span class="tag-cls">教室</span><span class="tag-ws">WS</span></span>
+          <span class="month-tags"><span class="tag-open">開催予定</span></span>
           <span class="chevron">▾</span>
         </button>
         <div class="month-body">
-          <div class="day-detail"><p class="tbd-block">内容は決まり次第お知らせします。</p></div>
+          <div class="day-detail">
+            <div class="day-detail-head"><span class="tag-ws">WS</span><span class="day-label">9月29日(火)</span></div>
+            <h5>天然石であそぼう</h5>
+            <ul class="detail-list">
+              <li>会費：¥4,500(食事付き)</li>
+              <li>時間：10:00〜15:00</li>
+            </ul>
+            <div class="avail">定員5名 / 現在のお申込み <b>3</b> 名</div>
+          </div>
+          <div class="day-detail">
+            <div class="day-detail-head"><span class="tag-cls">教室</span><span class="day-label">9月30日(水)</span></div>
+            <h5>料理教室：豆花・芋圓・米粉のガトーショコラ</h5>
+            <ul class="detail-list">
+              <li>会費：¥2,000</li>
+              <li>時間：10:00〜14:00</li>
+            </ul>
+            <div class="avail">定員5名 / 現在のお申込み <b>7</b> 名</div>
+            <p class="over-note">※締切は9月16日。定員を超えているため、選考ルールに基づき参加者を決定します</p>
+          </div>
         </div>
       </div>
-
     </div>
-    <p class="sched-note">WS=ワークショップ、教室=料理教室。空き状況は随時更新します。</p>
+    <p class="sched-note">WS=ワークショップ、教室=料理教室。</p>
   </section>
 
   <section id="rules" class="reveal">
