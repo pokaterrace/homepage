@@ -228,6 +228,11 @@
   }
   .shutten-empty p{ font-size:13px; color:var(--brown); line-height:1.9; margin:0; }
   .shutten-empty .hand{ font-size:16px; display:block; margin-bottom:8px; }
+  .tag-soon{ display:inline-block; background:var(--spice); color:#fff; font-size:10.5px; padding:3px 10px; border-radius:12px; margin-left:6px; vertical-align:middle; }
+  .tag-end{ display:inline-block; background:var(--green-soft); color:var(--brown-soft); font-size:10.5px; padding:3px 10px; border-radius:12px; margin-left:6px; vertical-align:middle; }
+  .sub-title{ font-family:'Yomogi',cursive; font-size:14px; color:var(--brown); max-width:460px; margin:22px auto 10px; }
+  .event-card.past{ opacity:.85; }
+  .event-card + .event-card{ margin-top:12px; }
 </style>
 </head>
 <body>
@@ -267,7 +272,7 @@
     <p>EVENTS</p>
   </div>
 
-  <p class="update-note reveal">このページは随時更新します。定期的に開催しているものと、出店情報を掲載しています。</p>
+  <p class="update-note reveal">このページは随時更新します。定期的に開催しているものと、出店の予定・実績を掲載しています。</p>
 
   <section id="regular" class="reveal">
     <h2 class="section-title">定期イベント</h2>
@@ -278,14 +283,29 @@
       <p>ぽかてらす主催のフリーマーケットです。詳しい日程は近づいたらこちらでお知らせします。</p>
       <p class="flyer-note">※開催日が決まり次第、チラシや出店者募集の詳細もここに掲載します。</p>
     </div>
+    <p class="sub-title">これまでの開催</p>
+    <div class="event-card past">
+      <div class="when">2026年9月22日(火)<span class="tag-end">終了しました</span></div>
+      <h4>第7回 ぽかぽかフリマ</h4>
+      <p>AGATSUMAサウンドピクニックの会場にて開催しました。ご来場ありがとうございました。</p>
+    </div>
   </section>
 
   <section id="shutten" class="events reveal">
     <h2 class="section-title">出店情報</h2>
     <p class="section-sub">MARKET APPEARANCES</p>
-    <div class="shutten-empty">
-      <span class="hand">現在、出店の予定はありません</span>
-      <p>他の方が主催するマルシェ等に出店する際は、こちらにチラシや詳細情報を掲載します。</p>
+    <p class="sub-title">今後の出店予定</p>
+    <div class="event-card">
+      <div class="when">2026年12月12日(土)<span class="tag-soon">出店予定</span></div>
+      <h4>クリスマスマルシェ</h4>
+      <p>出店します。時間や場所などの詳細は、決まり次第こちらでお知らせします。</p>
+      <p class="flyer-note">※チラシが届きましたら、こちらに掲載します。</p>
+    </div>
+    <p class="sub-title">これまでの出店</p>
+    <div class="event-card past">
+      <div class="when">2026年9月19日(土)<span class="tag-end">終了しました</span></div>
+      <h4>東吾妻ふるさと花火大会</h4>
+      <p>出店しました。ありがとうございました。</p>
     </div>
     <a class="back-link" href="index.html">← トップページへ戻る</a>
   </section>
