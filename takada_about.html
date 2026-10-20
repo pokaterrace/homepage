@@ -54,6 +54,19 @@
   .btn:active{ background:var(--green-deep); }
   .btn.ghost{ background:transparent; color:var(--green-deep); border:2px solid var(--green); }
   .btn.disabled{ background:#CFC8BE; color:#fff; pointer-events:none; }
+  .cal{ list-style:none; margin:0 0 6px; padding:0; }
+  .cal li{ display:flex; align-items:center; gap:12px; background:var(--white); border:1px solid var(--line); border-radius:14px; padding:10px 12px; margin-bottom:8px; }
+  .cal .m{ flex:0 0 74px; font-family:'Yomogi',cursive; color:var(--green-deep); font-size:15px; line-height:1.3; }
+  .cal .m small{ display:block; font-family:'Zen Maru Gothic',sans-serif; font-size:10.5px; color:var(--brown-soft); }
+  .cal .t{ flex:1; font-size:13px; }
+  .cal .t small{ display:block; font-size:11.5px; color:var(--brown-soft); }
+  .cal .th{ flex:0 0 52px; width:52px; height:52px; border-radius:50%; object-fit:cover; }
+  .cal .th-none{ flex:0 0 52px; width:52px; height:52px; }
+  .map-embed{ width:100%; height:240px; border:0; border-radius:12px; display:block; margin-top:8px; }
+  .map-card{ background:var(--white); border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px; }
+  .map-card h3{ margin:0 0 4px; font-size:18px; color:var(--green-deep); }
+  .map-card .addr{ margin:0; font-size:14px; }
+  .map-btn{ display:block; text-align:center; text-decoration:none; background:var(--green); color:#fff; font-weight:700; padding:13px 14px; border-radius:26px; margin-top:12px; font-size:15px; }
   .note-box{ background:var(--green-soft); border-radius:14px; padding:14px 16px; font-size:12.5px; margin:18px 0; }
   .note-box h4{ margin:0 0 4px; font-size:13.5px; color:var(--green-deep); }
   .note-box p{ margin:2px 0; }
@@ -80,7 +93,7 @@
     <nav>
       <a href="takada_shop.html">商品・ご予約</a>
       <a href="takada_about.html" class="on">高田商店とは</a>
-      <a href="pokaterasu_access.html">アクセス</a>
+      <a href="takada_access.html">アクセス</a>
       <a href="index.html">ぽかてらすへ</a>
     </nav>
   </div>
@@ -111,7 +124,7 @@
   <h2 class="section-title">カフェ「ぽかてらす」</h2>
   <p class="section-sub">POKATERRACE</p>
   <div class="story">
-    <p>妻の幸恵は、1月から9月まで、週4日・ランチのみのカフェ「ぽかてらす」も営んでいます。そのため、果物のお受け渡しが、高田商店ではなくカフェになることもあります。</p>
+    <p>妻の幸恵は、1月から9月まで、週4日・ランチのみのカフェ「ぽかてらす」も営んでいます。</p>
   </div>
   <a class="btn ghost" href="index.html">ぽかてらすのページへ</a>
 
@@ -120,7 +133,7 @@
   <div class="story">
     <p>高田商店 ／ 群馬県吾妻郡東吾妻町大戸442-1</p>
   </div>
-  <a class="btn ghost" href="pokaterasu_access.html">地図を見る</a>
+  <a class="btn ghost" href="takada_access.html">地図を見る</a>
 </main>
 <footer>
   <p>ご質問・ご相談は、LINEのトークからお気軽にどうぞ。</p>

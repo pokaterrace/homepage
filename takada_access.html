@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>アクセス | 高田商店</title>
+<meta name="description" content="高田商店の場所のご案内です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yomogi&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6F8EE; --white:#FFFEFA; --green:#5F8A57; --green-deep:#3F6540;
+    --green-soft:#DCE8D2; --brown:#4A3526; --brown-soft:#7A5C46; --peach:#E58F4D; --line:#D9E3CC;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:var(--cream); color:var(--brown);
+    font-family:'Zen Maru Gothic',sans-serif; line-height:1.9; font-size:14px; -webkit-text-size-adjust:100%; }
+  .hand{ font-family:'Yomogi',cursive; }
+  header{ background:var(--white); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:10; }
+  .head-in{ max-width:560px; margin:0 auto; padding:10px 16px 6px; }
+  .brand{ display:flex; align-items:baseline; gap:8px; text-decoration:none; color:var(--green-deep); }
+  .brand b{ font-family:'Yomogi',cursive; font-size:22px; letter-spacing:.08em; }
+  .brand span{ font-size:10px; color:var(--brown-soft); }
+  nav{ display:flex; flex-wrap:wrap; gap:4px 14px; padding:4px 0 4px; }
+  nav a{ font-size:12px; color:var(--brown); text-decoration:none; padding:2px 0; border-bottom:2px solid transparent; }
+  nav a.on{ border-bottom-color:var(--green); color:var(--green-deep); font-weight:700; }
+  main{ max-width:560px; margin:0 auto; padding:0 16px 40px; }
+  .page-title{ text-align:center; padding:30px 0 8px; }
+  .page-title h1{ margin:0; font-family:'Yomogi',cursive; font-size:26px; color:var(--green-deep); letter-spacing:.06em; }
+  .page-title p{ margin:2px 0 0; font-size:10px; letter-spacing:.3em; color:var(--brown-soft); }
+  .lead{ text-align:center; font-size:12.5px; color:var(--brown-soft); margin:10px 0 6px; }
+  h2.section-title{ margin:34px 0 2px; text-align:center; font-family:'Yomogi',cursive; font-size:20px; color:var(--green-deep); }
+  .section-sub{ text-align:center; margin:0 0 14px; font-size:10px; letter-spacing:.3em; color:var(--brown-soft); }
+  .card{ background:var(--white); border:1px solid var(--line); border-radius:16px; overflow:hidden; margin-bottom:16px; }
+  .card .photo{ width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+  .card .photo-ph{ width:100%; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(160deg,#EAF2DF,#CFE0C0); }
+  .card .photo-ph svg{ width:84px; height:84px; }
+  .card .body{ padding:14px 16px 16px; }
+  .card h3{ margin:0 0 4px; font-size:17px; display:flex; align-items:center; flex-wrap:wrap; gap:8px; }
+  .badge{ display:inline-block; font-size:10.5px; padding:2px 10px; border-radius:12px; color:#fff; font-weight:700; }
+  .b-open{ background:var(--green); }
+  .b-soon{ background:var(--peach); }
+  .b-end{ background:#A79B8F; }
+  .card p{ margin:4px 0; font-size:12.5px; color:var(--brown-soft); }
+  .price-list{ list-style:none; margin:8px 0 4px; padding:0; }
+  .price-list li{ display:flex; justify-content:space-between; gap:10px; padding:7px 2px; border-bottom:1px dashed var(--line); font-size:13px; }
+  .price-list li:last-child{ border-bottom:none; }
+  .price-list b{ color:var(--green-deep); white-space:nowrap; }
+  .btn{ display:block; text-align:center; text-decoration:none; background:var(--green); color:#fff; font-weight:700;
+    padding:12px 16px; border-radius:26px; margin-top:12px; font-size:14px; }
+  .btn:active{ background:var(--green-deep); }
+  .btn.ghost{ background:transparent; color:var(--green-deep); border:2px solid var(--green); }
+  .btn.disabled{ background:#CFC8BE; color:#fff; pointer-events:none; }
+  .cal{ list-style:none; margin:0 0 6px; padding:0; }
+  .cal li{ display:flex; align-items:center; gap:12px; background:var(--white); border:1px solid var(--line); border-radius:14px; padding:10px 12px; margin-bottom:8px; }
+  .cal .m{ flex:0 0 74px; font-family:'Yomogi',cursive; color:var(--green-deep); font-size:15px; line-height:1.3; }
+  .cal .m small{ display:block; font-family:'Zen Maru Gothic',sans-serif; font-size:10.5px; color:var(--brown-soft); }
+  .cal .t{ flex:1; font-size:13px; }
+  .cal .t small{ display:block; font-size:11.5px; color:var(--brown-soft); }
+  .cal .th{ flex:0 0 52px; width:52px; height:52px; border-radius:50%; object-fit:cover; }
+  .cal .th-none{ flex:0 0 52px; width:52px; height:52px; }
+  .map-embed{ width:100%; height:240px; border:0; border-radius:12px; display:block; margin-top:8px; }
+  .map-card{ background:var(--white); border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px; }
+  .map-card h3{ margin:0 0 4px; font-size:18px; color:var(--green-deep); }
+  .map-card .addr{ margin:0; font-size:14px; }
+  .map-btn{ display:block; text-align:center; text-decoration:none; background:var(--green); color:#fff; font-weight:700; padding:13px 14px; border-radius:26px; margin-top:12px; font-size:15px; }
+  .note-box{ background:var(--green-soft); border-radius:14px; padding:14px 16px; font-size:12.5px; margin:18px 0; }
+  .note-box h4{ margin:0 0 4px; font-size:13.5px; color:var(--green-deep); }
+  .note-box p{ margin:2px 0; }
+  .empty{ text-align:center; color:var(--brown-soft); font-size:12.5px; padding:14px; border:1px dashed var(--line); border-radius:14px; background:var(--white); }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .grid2 .card{ margin-bottom:0; }
+  .grid2 .card .body{ padding:10px 12px 12px; }
+  .grid2 .card h3{ font-size:15px; }
+  .grid2 .card p{ font-size:11.5px; }
+  .story p{ margin:0 0 14px; font-size:13.5px; }
+  .people{ list-style:none; margin:0 0 14px; padding:0; }
+  .people li{ background:var(--white); border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin-bottom:8px; font-size:13px; }
+  .people li small{ display:block; color:var(--brown-soft); font-size:11.5px; }
+  .back-link{ display:block; text-align:center; margin-top:26px; font-size:12px; color:var(--green-deep); }
+  footer{ text-align:center; padding:22px 16px 30px; font-size:11px; color:var(--brown-soft); border-top:1px solid var(--line); background:var(--white); }
+  footer a{ color:var(--green-deep); }
+  @media (min-width:600px){ .head-in,main{ max-width:640px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="head-in">
+    <a class="brand" href="takada_shop.html"><b>高田商店</b></a>
+    <nav>
+      <a href="takada_shop.html">商品・ご予約</a>
+      <a href="takada_about.html">高田商店とは</a>
+      <a href="takada_access.html" class="on">アクセス</a>
+      <a href="index.html">ぽかてらすへ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-title">
+    <h1>場所</h1>
+    <p>ACCESS</p>
+  </div>
+  <div class="map-card">
+    <h3>🍑 高田商店</h3>
+    <p class="addr">群馬県吾妻郡東吾妻町大戸442-1</p>
+    <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E5%90%BE%E5%A6%BB%E9%83%A1%E6%9D%B1%E5%90%BE%E5%A6%BB%E7%94%BA%E5%A4%A7%E6%88%B8442-1&hl=ja&z=16&output=embed"></iframe>
+    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E5%90%BE%E5%A6%BB%E9%83%A1%E6%9D%B1%E5%90%BE%E5%A6%BB%E7%94%BA%E5%A4%A7%E6%88%B8442-1" target="_blank" rel="noopener">Googleマップで開く</a>
+  </div>
+  <div class="map-card">
+    <h3>🐾 ぽかてらす</h3>
+    <p class="addr">〒377-0931　群馬県吾妻郡東吾妻町大戸3602</p>
+    <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E5%90%BE%E5%A6%BB%E9%83%A1%E6%9D%B1%E5%90%BE%E5%A6%BB%E7%94%BA%E5%A4%A7%E6%88%B83602&hl=ja&z=16&output=embed"></iframe>
+    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E5%90%BE%E5%A6%BB%E9%83%A1%E6%9D%B1%E5%90%BE%E5%A6%BB%E7%94%BA%E5%A4%A7%E6%88%B83602" target="_blank" rel="noopener">Googleマップで開く</a>
+  </div>
+  <div class="map-card">
+    <p class="addr">高田商店とぽかてらすは、車で約2分の距離です。</p>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E5%90%BE%E5%A6%BB%E9%83%A1%E6%9D%B1%E5%90%BE%E5%A6%BB%E7%94%BA%E5%A4%A7%E6%88%B8442-1&destination=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E5%90%BE%E5%A6%BB%E9%83%A1%E6%9D%B1%E5%90%BE%E5%A6%BB%E7%94%BA%E5%A4%A7%E6%88%B83602&travelmode=driving" target="_blank" rel="noopener">2つの場所を、ルートで見る</a>
+  </div>
+</main>
+<footer>
+  <p>ご質問・ご相談は、LINEのトークからお気軽にどうぞ。</p>
+  <p>©2026 高田商店</p>
+</footer>
+</body>
+</html>
