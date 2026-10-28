@@ -211,6 +211,22 @@
   .page-title h1{ font-family:'Yomogi',cursive; font-size:30px; margin:0 0 6px; }
   .page-title p{ font-size:12px; color:var(--brown-soft); letter-spacing:.1em; }
   .back-link{ display:block; text-align:center; font-size:12px; color:var(--brown-soft); margin-top:10px; }
+
+  .menu-row.has-photo{ align-items:center; }
+  .menu-row.has-photo > span{ flex:1; }
+  .thumb{ flex:0 0 88px; width:88px; height:88px; padding:0; border:0; border-radius:12px; overflow:hidden; cursor:zoom-in; background:var(--ivory-deep); }
+  .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .menu-row.multi{ flex-wrap:wrap; }
+  .menu-row.multi .thumbs{ flex:0 0 100%; display:flex; gap:8px; }
+  .menu-row.multi .thumbs figure{ flex:1; margin:0; text-align:center; }
+  .menu-row.multi .thumbs .thumb{ width:100%; height:92px; flex:none; display:block; }
+  .menu-row.multi .thumbs figcaption{ font-size:10.5px; color:var(--brown-soft); margin-top:4px; line-height:1.4; }
+  .tap-hint{ text-align:center; font-size:11.5px; color:var(--brown-soft); margin:0 0 12px; }
+  #lightbox{ position:fixed; inset:0; background:rgba(40,28,18,.88); display:none; align-items:center; justify-content:center; flex-direction:column; gap:12px; z-index:200; padding:16px; cursor:zoom-out; }
+  #lightbox.open{ display:flex; }
+  #lightbox img{ max-width:100%; max-height:78vh; border-radius:14px; background:#fff; }
+  #lightbox p{ color:#fff; font-size:15px; margin:0; text-align:center; }
+  #lightbox small{ color:#e9dfcf; font-size:12px; }
 </style>
 </head>
 <body>
@@ -254,15 +270,17 @@
 
   <section id="lunch" class="reveal">
     <h2 class="section-title">🍛 ランチ</h2>
+    <p class="tap-hint">📷 写真を押すと、大きく見られます</p>
     <div class="menu-cat" style="margin-bottom:0;">
-      <div class="menu-row"><span>スパイスキーマカレープレート<br><small>パン or ライス</small></span><b>¥1,500</b></div>
-      <div class="menu-row"><span>煮込みハンバーグプレート<br><small>パン or ライス</small></span><b>¥1,500</b></div>
+      <div class="menu-row has-photo"><button type="button" class="thumb" data-full="menu_curry.jpg" data-cap="スパイスキーマカレープレート" aria-label="スパイスキーマカレープレートの写真を大きく見る"><img src="menu_curry.jpg" alt="スパイスキーマカレープレート" loading="lazy"></button><span>スパイスキーマカレープレート<br><small>パン or ライス</small></span><b>¥1,500</b></div>
+      <div class="menu-row has-photo"><button type="button" class="thumb" data-full="menu_hamburger_plate.jpg" data-cap="煮込みハンバーグプレート" aria-label="煮込みハンバーグプレートの写真を大きく見る"><img src="menu_hamburger_plate.jpg" alt="煮込みハンバーグプレート" loading="lazy"></button><span>煮込みハンバーグプレート<br><small>パン or ライス</small></span><b>¥1,500</b></div>
       <div class="menu-row"><span>スパイスキーマカレー シンプル<br><small>パン or ライス</small></span><b>¥900</b></div>
-      <div class="menu-row"><span>煮込みハンバーグ シンプル<br><small>パン or ライス</small></span><b>¥900</b></div>
-      <div class="menu-row"><span>じゃがいものニョッキ<br><small>煮込みハンバーグ付き</small></span><b>¥1,200</b></div>
+      <div class="menu-row has-photo"><button type="button" class="thumb" data-full="menu_hamburger_simple.jpg" data-cap="煮込みハンバーグ シンプル" aria-label="煮込みハンバーグ シンプルの写真を大きく見る"><img src="menu_hamburger_simple.jpg" alt="煮込みハンバーグ シンプル" loading="lazy"></button><span>煮込みハンバーグ シンプル<br><small>パン or ライス</small></span><b>¥900</b></div>
+      <div class="menu-row has-photo"><button type="button" class="thumb" data-full="menu_gnocchi.jpg" data-cap="じゃがいものニョッキ" aria-label="じゃがいものニョッキの写真を大きく見る"><img src="menu_gnocchi.jpg" alt="じゃがいものニョッキ" loading="lazy"></button><span>じゃがいものニョッキ<br><small>煮込みハンバーグ付き</small></span><b>¥1,200</b></div>
       <div class="menu-row"><span>追加のパン(1個)</span><b>¥150</b></div>
       <div class="menu-row"><span>ご飯 大盛</span><b>+¥100</b></div>
       <p class="menu-note">お食事に+200円で、単品350円のお飲み物をセットにできます。</p>
+      <p class="menu-note" style="margin-top:8px;">付け合わせは、時々変わります。写真と少しちがう場合があります。</p>
     </div>
   </section>
 
@@ -273,8 +291,8 @@
       <div class="menu-row"><span>珈琲(HOT)</span><b>¥350</b></div>
       <div class="menu-row"><span>紅茶(HOT/ICE)</span><b>¥350</b></div>
       <div class="menu-row"><span>オレンジ / りんご 100%ジュース</span><b>¥350</b></div>
-      <div class="menu-row"><span>各果汁入りジュース(水割り・炭酸割り)</span><b>¥350</b></div>
-      <div class="menu-row"><span>手作り梅ジュース・梅酢ジュース(水/炭酸)</span><b>¥350</b></div>
+      <div class="menu-row has-photo"><button type="button" class="thumb" data-full="menu_juice.jpg" data-cap="各果汁入りジュース" aria-label="各果汁入りジュースの写真を大きく見る"><img src="menu_juice.jpg" alt="各果汁入りジュース" loading="lazy"></button><span>各果汁入りジュース(水割り・炭酸割り)</span><b>¥350</b></div>
+      <div class="menu-row has-photo"><button type="button" class="thumb" data-full="menu_ume.jpg" data-cap="手作り梅ジュース・梅酢ジュース" aria-label="手作り梅ジュース・梅酢ジュースの写真を大きく見る"><img src="menu_ume.jpg" alt="手作り梅ジュース・梅酢ジュース" loading="lazy"></button><span>手作り梅ジュース・梅酢ジュース(水/炭酸)</span><b>¥350</b></div>
       <p class="menu-note" style="margin:14px 0 8px;">ここからはセット対象外</p>
       <div class="menu-row"><span>アイスコーヒー</span><b>¥400</b></div>
       <div class="menu-row"><span>カフェラテ(HOT/ICE)</span><b>¥400</b></div>
@@ -282,7 +300,7 @@
       <div class="menu-row"><span>生バナナジュース</span><b>¥400</b></div>
       <div class="menu-row"><span>抹茶ミルク</span><b>¥400</b></div>
       <div class="menu-row"><span>タピオカドリンク(紅茶/キャラメル)</span><b>¥450</b></div>
-      <div class="menu-row"><span>マンゴーラッシー<br><small>お食事・デザートとセットなら ¥500</small></span><b>¥600</b></div>
+      <div class="menu-row has-photo"><button type="button" class="thumb" data-full="menu_lassi.jpg" data-cap="マンゴーラッシー" aria-label="マンゴーラッシーの写真を大きく見る"><img src="menu_lassi.jpg" alt="マンゴーラッシー" loading="lazy"></button><span>マンゴーラッシー<br><small>お食事・デザートとセットなら ¥500</small></span><b>¥600</b></div>
       <div class="menu-row"><span>サイフォンコーヒー<br><small>手が空いている時のみ・豆はご自身で挽いていただきます</small></span><b>¥500</b></div>
       <p class="menu-note">お食事の方はサーバーコーナーのインスタントスープ・お飲み物を自由にどうぞ。熱いお茶のお替りは店主までお声がけください。</p>
     </div>
@@ -291,11 +309,13 @@
   <section id="dessert" class="reveal">
     <h2 class="section-title">🍰 デザート</h2>
     <div class="menu-cat" style="margin-bottom:0;">
-      <div class="menu-row"><span>手作りアイス<br><small>なめらかクリームチーズアイス</small></span><b>¥500</b></div>
-      <div class="menu-row"><span>抹茶ミルクドリンクパフェ</span><b>¥500</b></div>
-      <div class="menu-row"><span>月替わりデザート<br><small>店内の今月のデザートを参照</small></span><b>¥500</b></div>
-      <div class="menu-row"><span>小さなご褒美アフォガード</span><b>¥700</b></div>
-      <div class="menu-row"><span>手作りクッキー<br><small>お持ち帰り可(在庫がない場合あり)</small></span><b>¥400</b></div>
+      <div class="menu-row has-photo"><button type="button" class="thumb" data-full="menu_cheeseice.jpg" data-cap="なめらかクリームチーズアイス" aria-label="なめらかクリームチーズアイスの写真を大きく見る"><img src="menu_cheeseice.jpg" alt="なめらかクリームチーズアイス" loading="lazy"></button><span>手作りアイス<br><small>なめらかクリームチーズアイス</small></span><b>¥500</b></div>
+      <div class="menu-row has-photo"><button type="button" class="thumb" data-full="menu_parfait.jpg" data-cap="抹茶ミルクドリンクパフェ" aria-label="抹茶ミルクドリンクパフェの写真を大きく見る"><img src="menu_parfait.jpg" alt="抹茶ミルクドリンクパフェ" loading="lazy"></button><span>抹茶ミルクドリンクパフェ</span><b>¥500</b></div>
+      <div class="menu-row multi"><span>月替わりデザート<br><small>店内の今月のデザートを参照</small></span><b>¥500</b><div class="thumbs"><figure><button type="button" class="thumb" data-full="menu_tiramisu.jpg" data-cap="ティラミス" aria-label="ティラミスの写真を大きく見る"><img src="menu_tiramisu.jpg" alt="ティラミス" loading="lazy"></button><figcaption>ティラミス</figcaption></figure><figure><button type="button" class="thumb" data-full="menu_basque.jpg" data-cap="バスク風チーズケーキ" aria-label="バスク風チーズケーキの写真を大きく見る"><img src="menu_basque.jpg" alt="バスク風チーズケーキ" loading="lazy"></button><figcaption>バスク風チーズケーキ</figcaption></figure><figure><button type="button" class="thumb" data-full="menu_pudding.jpg" data-cap="プリンアラモード" aria-label="プリンアラモードの写真を大きく見る"><img src="menu_pudding.jpg" alt="プリンアラモード" loading="lazy"></button><figcaption>プリンアラモード</figcaption></figure></div></div>
+      <p class="menu-note" style="margin:0 0 8px;">↑ 月替わりデザートの例です（内容は月によって変わります）</p>
+      <div class="menu-row has-photo"><button type="button" class="thumb" data-full="menu_affogato.jpg" data-cap="小さなご褒美アフォガード" aria-label="小さなご褒美アフォガードの写真を大きく見る"><img src="menu_affogato.jpg" alt="小さなご褒美アフォガード" loading="lazy"></button><span>小さなご褒美アフォガード</span><b>¥700</b></div>
+      <div class="menu-row has-photo"><button type="button" class="thumb" data-full="menu_cookie.jpg" data-cap="手作りクッキー" aria-label="手作りクッキーの写真を大きく見る"><img src="menu_cookie.jpg" alt="手作りクッキー" loading="lazy"></button><span>手作りクッキー<br><small>お持ち帰り可(在庫がない場合あり)</small></span><b>¥400</b></div>
+      <p class="menu-note" style="margin-top:8px;">付け合わせのフルーツは、季節によってちがいます。</p>
     </div>
   </section>
 
@@ -319,6 +339,8 @@
   <p class="addr">スパイスカレーと手ごねパンの店<br>©2026 ぽかてらす</p>
 </footer>
 
+<div id="lightbox" role="dialog" aria-label="写真"><img alt=""><p></p><small>どこかを押すと、閉じます</small></div>
+
 <script>
   const burger = document.getElementById('burgerBtn');
   const drawer = document.getElementById('drawer');
@@ -330,6 +352,15 @@
     scrim.classList.toggle('open');
   });
   scrim.addEventListener('click', closeDrawer);
+  const lb = document.getElementById('lightbox');
+  document.querySelectorAll('.thumb').forEach(b => b.addEventListener('click', () => {
+    lb.querySelector('img').src = b.dataset.full;
+    lb.querySelector('img').alt = b.dataset.cap;
+    lb.querySelector('p').textContent = b.dataset.cap;
+    lb.classList.add('open');
+  }));
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') lb.classList.remove('open'); });
   drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
   const io = new IntersectionObserver((entries) => {
