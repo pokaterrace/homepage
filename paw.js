@@ -1,9 +1,10 @@
 /* ぽかてらす：マウス（指）を動かすと、肉球の足あとがついてくる
    ・同時に残る足あとは 5 個まで（古いものから消えます）
    ・パソコンはカーソル、スマホは指でなぞったときに出ます
-   ・「動きを減らす」設定のときは、出ません */
+   ・パソコンが「動きを減らす」設定のときは、ふわっと消える動きはなくして、
+     足あとだけを、ぱっと出して、ぱっと消します */
 (function () {
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var REDUCED = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   var MAX = 5;            // 同時に残る足あとの数
   var STEP = 70;          // 何px動くたびに 1 歩 出すか
@@ -30,7 +31,8 @@
     '.paw-print{position:fixed;pointer-events:none;opacity:0;will-change:opacity,transform;' +
     'transition:opacity .25s ease-out;}' +
     '.paw-print.on{opacity:.6;}' +
-    '.paw-print.off{opacity:0;transition:opacity ' + (LIFE / 1000) + 's ease-in;}';
+    '.paw-print.off{opacity:0;transition:opacity ' + (LIFE / 1000) + 's ease-in;}' +
+    (REDUCED ? '.paw-print,.paw-print.off{transition:none !important;}' : '');
 
   function ready(fn) {
     if (document.body) fn(); else document.addEventListener('DOMContentLoaded', fn);
